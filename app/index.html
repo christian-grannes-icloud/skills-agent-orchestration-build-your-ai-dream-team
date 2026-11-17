@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f7f9">
+  <meta name="description" content="A clear, at-a-glance view of project health, ownership, and recent activity.">
+  <title>Project Pulse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Main navigation">
+      <a class="brand" href="#overview" aria-label="Pulse home">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+        <span>pulse<span class="brand-period">.</span></span>
+      </a>
+
+      <div class="workspace-switcher">
+        <span class="workspace-avatar" aria-hidden="true">M</span>
+        <span class="workspace-copy"><strong>Mona's team</strong><small>Workspace</small></span>
+        <span class="switcher-chevron" aria-hidden="true">⌄</span>
+      </div>
+
+      <p class="nav-label">WORKSPACE</p>
+      <nav class="primary-nav">
+        <a class="nav-item active" href="#overview" aria-current="page">
+          <svg aria-hidden="true" viewBox="0 0 20 20"><rect x="3" y="3" width="5" height="5" rx="1"/><rect x="12" y="3" width="5" height="5" rx="1"/><rect x="3" y="12" width="5" height="5" rx="1"/><rect x="12" y="12" width="5" height="5" rx="1"/></svg>
+          Overview
+        </a>
+        <a class="nav-item" href="#projects">
+          <svg aria-hidden="true" viewBox="0 0 20 20"><path d="M4 5.5h12M4 10h12M4 14.5h8"/><circle cx="2.5" cy="5.5" r=".5"/><circle cx="2.5" cy="10" r=".5"/><circle cx="2.5" cy="14.5" r=".5"/></svg>
+          Projects <span class="nav-count" id="nav-project-count">—</span>
+        </a>
+        <a class="nav-item" href="#activity">
+          <svg aria-hidden="true" viewBox="0 0 20 20"><path d="M3 10h3l2-5 4 10 2-5h3"/></svg>
+          Activity
+        </a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="sidebar-note">
+          <span class="note-icon" aria-hidden="true">✳</span>
+          <strong>Good work happens in sync.</strong>
+          <p>Keep your team moving with a clear view of what's next.</p>
+        </div>
+        <button class="profile-button" type="button" aria-label="Signed in as Mona Lee">
+          <span class="profile-avatar" aria-hidden="true">ML</span>
+          <span class="profile-copy"><strong>Mona Lee</strong><small>Team lead</small></span>
+          <span class="profile-menu" aria-hidden="true">•••</span>
+        </button>
+      </div>
+    </aside>
+
+    <main class="main-content dashboard" id="overview">
+      <div class="topbar">
+        <div class="breadcrumbs"><span>Workspace</span><span aria-hidden="true">/</span><strong>Overview</strong></div>
+        <div class="topbar-actions">
+          <span class="updated-label"><span class="live-dot" aria-hidden="true"></span> Live overview</span>
+          <button class="icon-button" type="button" aria-label="Notifications">
+            <svg aria-hidden="true" viewBox="0 0 20 20"><path d="M15.5 8a5.5 5.5 0 0 0-11 0c0 6-2 6-2 7.5h15C17.5 14 15.5 14 15.5 8ZM8 18h4"/></svg>
+            <span class="notification-dot" aria-hidden="true"></span>
+          </button>
+          <span class="topbar-avatar" aria-label="Mona Lee">ML</span>
+        </div>
+      </div>
+
+      <div class="page-wrap">
+        <section class="page-heading" aria-labelledby="page-title">
+          <div>
+            <p class="eyebrow"><span id="today-date">TODAY</span> <span class="eyebrow-line"></span> TEAM WORKSPACE</p>
+            <h1 id="page-title">Project Pulse <span class="heading-sparkle" aria-hidden="true">✳</span></h1>
+            <p class="page-intro">A little clarity goes a long way. Here's where things stand today.</p>
+          </div>
+          <button class="view-button" type="button" id="view-mode" aria-pressed="false">
+            <svg aria-hidden="true" viewBox="0 0 20 20"><path d="M3 5h14M3 10h14M3 15h14"/><circle cx="6" cy="5" r="1.5"/><circle cx="12" cy="10" r="1.5"/><circle cx="8" cy="15" r="1.5"/></svg>
+            This week <span aria-hidden="true">⌄</span>
+          </button>
+        </section>
+
+        <section class="stats-grid" aria-label="Project summary" id="summary-stats">
+          <article class="stat-card stat-total">
+            <div class="stat-top"><span class="stat-label">Total projects</span><span class="stat-icon indigo-icon" aria-hidden="true">▦</span></div>
+            <div class="stat-value" id="total-projects">—</div>
+            <div class="stat-foot"><span class="trend-pill">↗ &nbsp;12%</span><span>vs. last month</span></div>
+          </article>
+          <article class="stat-card stat-on-track">
+            <div class="stat-top"><span class="stat-label">On track</span><span class="stat-icon green-icon" aria-hidden="true">✓</span></div>
+            <div class="stat-value" id="on-track-projects">—</div>
+            <div class="stat-foot"><span class="stat-status"><span class="mini-dot green-dot"></span> Looking good</span></div>
+          </article>
+          <article class="stat-card stat-risk">
+            <div class="stat-top"><span class="stat-label">Needs attention</span><span class="stat-icon amber-icon" aria-hidden="true">!</span></div>
+            <div class="stat-value" id="attention-projects">—</div>
+            <div class="stat-foot"><span class="stat-status"><span class="mini-dot amber-dot"></span> Keep an eye on these</span></div>
+          </article>
+          <article class="stat-card stat-high-priority">
+            <div class="stat-top"><span class="stat-label">High priority</span><span class="stat-icon coral-icon" aria-hidden="true">↗</span></div>
+            <div class="stat-value" id="high-priority-projects">—</div>
+            <div class="stat-foot"><span class="stat-status"><span class="mini-dot coral-dot"></span> Focus items</span></div>
+          </article>
+        </section>
+
+        <section class="project-section" id="projects" aria-labelledby="projects-title">
+          <div class="section-heading">
+            <div>
+              <div class="section-title-row"><h2 id="projects-title">Your projects</h2><span class="section-count" id="section-project-count">—</span></div>
+              <p>Everything your team is moving forward.</p>
+            </div>
+            <label class="search-box">
+              <svg aria-hidden="true" viewBox="0 0 20 20"><circle cx="8.7" cy="8.7" r="5.7"/><path d="m13 13 4 4"/></svg>
+              <span class="sr-only">Search projects</span>
+              <input id="project-search" type="search" placeholder="Search projects..." autocomplete="off">
+              <kbd>/</kbd>
+            </label>
+          </div>
+
+          <div class="project-toolbar">
+            <div class="filter-tabs" role="group" aria-label="Filter projects by status">
+              <button class="filter-tab selected" type="button" data-filter="all" aria-pressed="true">All projects <span id="all-count">—</span></button>
+              <button class="filter-tab" type="button" data-filter="on track" aria-pressed="false"><span class="tab-dot green-dot"></span>On track</button>
+              <button class="filter-tab" type="button" data-filter="at risk" aria-pressed="false"><span class="tab-dot amber-dot"></span>At risk</button>
+              <button class="filter-tab" type="button" data-filter="in progress" aria-pressed="false"><span class="tab-dot blue-dot"></span>In progress</button>
+            </div>
+            <button class="sort-button" type="button" id="sort-projects" aria-label="Sort projects by priority">
+              <svg aria-hidden="true" viewBox="0 0 20 20"><path d="M4 5h12M6 10h8m-5 5h2"/></svg>
+              Priority <span aria-hidden="true">⌄</span>
+            </button>
+          </div>
+
+          <div class="project-grid" id="project-list" aria-live="polite" aria-busy="true">
+            <div class="loading-card">Gathering your project updates<span class="loading-dots" aria-hidden="true">•••</span></div>
+          </div>
+          <p class="empty-state" id="empty-state" hidden>No projects match your search. Try another name or status.</p>
+          <p class="load-error" id="load-error" role="alert" hidden>We couldn't load project data. Please refresh the page and try again.</p>
+        </section>
+
+        <footer class="page-footer" id="activity">
+          <span>Made for teams that move things forward <span aria-hidden="true">✳</span></span>
+          <span>Last synced just now <span class="live-dot" aria-hidden="true"></span></span>
+        </footer>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const projectList = document.querySelector('#project-list');
+    document.querySelector('#today-date').textContent = new Intl.DateTimeFormat('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' }).format(new Date()).toUpperCase();
+    const searchInput = document.querySelector('#project-search');
+    const filterButtons = [...document.querySelectorAll('.filter-tab')];
+    const emptyState = document.querySelector('#empty-state');
+    const loadError = document.querySelector('#load-error');
+    let projects = [];
+    let activeFilter = 'all';
+    let priorityDescending = true;
+
+    const statusClass = (status) => status.toLowerCase().replace(/[^a-z]+/g, '-').replace(/^-|-$/g, '');
+    const priorityClass = (priority) => priority.toLowerCase();
+
+    function updateSummary() {
+      const attention = projects.filter((project) => project.status.toLowerCase() === 'at risk').length;
+      document.querySelector('#total-projects').textContent = projects.length.toString().padStart(2, '0');
+      document.querySelector('#on-track-projects').textContent = projects.filter((project) => project.status.toLowerCase() === 'on track').length.toString().padStart(2, '0');
+      document.querySelector('#attention-projects').textContent = attention.toString().padStart(2, '0');
+      document.querySelector('#high-priority-projects').textContent = projects.filter((project) => project.priority.toLowerCase() === 'high').length.toString().padStart(2, '0');
+      document.querySelector('#nav-project-count').textContent = projects.length;
+      document.querySelector('#section-project-count').textContent = projects.length;
+      document.querySelector('#all-count').textContent = projects.length;
+    }
+
+    function createProjectCard(project, index) {
+      const card = document.createElement('article');
+      card.className = 'project-card';
+      card.style.setProperty('--card-order', index);
+
+      const top = document.createElement('div');
+      top.className = 'card-topline';
+      const status = document.createElement('span');
+      status.className = `status-badge status-${statusClass(project.status)}`;
+      status.innerHTML = '<span class="status-indicator" aria-hidden="true"></span>';
+      status.append(document.createTextNode(project.status));
+      const priority = document.createElement('span');
+      priority.className = `priority-badge priority-${priorityClass(project.priority)}`;
+      const priorityDot = document.createElement('span');
+      priorityDot.className = 'priority-indicator';
+      priorityDot.setAttribute('aria-hidden', 'true');
+      priority.append(priorityDot, document.createTextNode(`${project.priority} priority`));
+      top.append(status, priority);
+
+      const title = document.createElement('h3');
+      title.textContent = project.name;
+      const summary = document.createElement('p');
+      summary.className = 'project-summary';
+      summary.textContent = project.summary;
+
+      const activity = document.createElement('div');
+      activity.className = 'activity-line';
+      activity.innerHTML = '<svg aria-hidden="true" viewBox="0 0 20 20"><circle cx="10" cy="10" r="7"/><path d="M10 6v4l2.5 1.5"/></svg>';
+      const activityText = document.createElement('span');
+      activityText.textContent = project.recentActivity;
+      activity.append(activityText);
+
+      const footer = document.createElement('div');
+      footer.className = 'card-footer';
+      const owner = document.createElement('div');
+      owner.className = 'owner';
+      const avatar = document.createElement('span');
+      avatar.className = `owner-avatar avatar-${index % 5}`;
+      avatar.textContent = project.owner.split(/\s+/).map((part) => part[0]).slice(0, 2).join('').toUpperCase();
+      const ownerName = document.createElement('span');
+      ownerName.textContent = project.owner;
+      owner.append(avatar, ownerName);
+      const more = document.createElement('button');
+      more.className = 'card-menu';
+      more.type = 'button';
+      more.setAttribute('aria-label', `More options for ${project.name}`);
+      more.textContent = '•••';
+      footer.append(owner, more);
+
+      card.append(top, title, summary, activity, footer);
+      return card;
+    }
+
+    function renderProjects() {
+      const query = searchInput.value.trim().toLowerCase();
+      const visibleProjects = projects
+        .filter((project) => activeFilter === 'all' || project.status.toLowerCase() === activeFilter)
+        .filter((project) => `${project.name} ${project.owner} ${project.summary}`.toLowerCase().includes(query))
+        .sort((a, b) => {
+          const rank = { high: 0, medium: 1, low: 2 };
+          const difference = rank[a.priority.toLowerCase()] - rank[b.priority.toLowerCase()];
+          return priorityDescending ? difference : -difference;
+        });
+
+      projectList.replaceChildren(...visibleProjects.map(createProjectCard));
+      projectList.setAttribute('aria-busy', 'false');
+      emptyState.hidden = visibleProjects.length > 0;
+    }
+
+    async function loadProjects() {
+      try {
+        const response = await fetch('project-data.json');
+        if (!response.ok) throw new Error(`Request failed: ${response.status}`);
+        const data = await response.json();
+        if (!Array.isArray(data.projects)) throw new Error('Project data must contain a projects array.');
+        projects = data.projects;
+        updateSummary();
+        renderProjects();
+      } catch (error) {
+        console.error('Unable to load project data:', error);
+        projectList.replaceChildren();
+        projectList.setAttribute('aria-busy', 'false');
+        loadError.hidden = false;
+      }
+    }
+
+    filterButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        activeFilter = button.dataset.filter;
+        filterButtons.forEach((item) => {
+          const selected = item === button;
+          item.classList.toggle('selected', selected);
+          item.setAttribute('aria-pressed', String(selected));
+        });
+        renderProjects();
+      });
+    });
+    searchInput.addEventListener('input', renderProjects);
+    document.querySelector('#sort-projects').addEventListener('click', (event) => {
+      priorityDescending = !priorityDescending;
+      event.currentTarget.setAttribute('aria-label', `Sort projects by priority ${priorityDescending ? 'descending' : 'ascending'}`);
+      renderProjects();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === '/' && document.activeElement !== searchInput && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
+        event.preventDefault();
+        searchInput.focus();
+      }
+    });
+
+    loadProjects();
+  </script>
+</body>
+</html>

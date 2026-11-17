@@ -1,0 +1,52 @@
+{
+  "projects": [
+    {
+      "name": "Website refresh",
+      "owner": "Jamie Chen",
+      "status": "On track",
+      "recentActivity": "Design review completed · 2h ago",
+      "priority": "High",
+      "summary": "A brighter, more accessible home for our growing community."
+    },
+    {
+      "name": "Mobile experience",
+      "owner": "Alex Rivera",
+      "status": "In progress",
+      "recentActivity": "Prototype shared with the team · 4h ago",
+      "priority": "High",
+      "summary": "Making the everyday workflow feel effortless on any screen."
+    },
+    {
+      "name": "Customer insights",
+      "owner": "Priya Shah",
+      "status": "At risk",
+      "recentActivity": "Waiting on interview responses · 1d ago",
+      "priority": "High",
+      "summary": "Turning customer conversations into our next best ideas."
+    },
+    {
+      "name": "Onboarding flow",
+      "owner": "Noah Williams",
+      "status": "On track",
+      "recentActivity": "First-run copy approved · 1d ago",
+      "priority": "Medium",
+      "summary": "Helping every new teammate find their footing from day one."
+    },
+    {
+      "name": "Design system",
+      "owner": "Taylor Morgan",
+      "status": "In progress",
+      "recentActivity": "Button library updated · 2d ago",
+      "priority": "Medium",
+      "summary": "A shared set of building blocks for a more consistent product."
+    },
+    {
+      "name": "Spring campaign",
+      "owner": "Sam Okafor",
+      "status": "At risk",
+      "recentActivity": "Launch date needs confirmation · 2d ago",
+      "priority": "Low",
+      "summary": "Bringing our newest stories to the people who need them."
+    }
+  ]
+}
